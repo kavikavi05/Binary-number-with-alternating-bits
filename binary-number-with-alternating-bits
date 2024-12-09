@@ -1,0 +1,11 @@
+bool hasAlternatingBits(int n) {
+    int k = 0x01 & n;
+    while (n != 0) {
+        if ((n & 0x01) != k) {
+            return false;
+        }
+        k ^= 0x01;
+        n >>= 0x01;
+    }
+    return true;
+}
